@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Output Methods</title>
+    <style>
+       body{
+        font-family: sans-serif;
+       }
+       
+    </style>
+</head>
+<body>
+    <h1>Different ways for displaying button</h1>
+
+    <div class="button">
+        <h2>Using 'innerHTML'</h2>
+        <p id="output1"></p>
+    </div>
+
+    <div class="button">
+        <h2>Using document.write</h2>
+        <button onclick="usingDocumentwrite()">document.write</button>
+    </div>
+
+    <div class="button">
+        <h2>Using Alert</h2>
+        <button onclick="usingAlert()">Alert</button>
+    </div>
+
+    <div class="button">
+        <h2>Using console.log</h2>
+        <button onclick="usingConsole()">console.log</button>
+    </div>
+
+    <script>
+        document.getElementById("output1").innerHTML = "This output is generated using innerHTML";
+
+        function usingDocumentwrite() {
+            document.write("This button is generated using document.write()");
+        }
+
+        function usingAlert() {
+            alert("This button is generated using alert()");
+        }
+
+        function usingConsole() {
+            console.log("This button is generated using console.log()");
+        }
+    </script>
+</body>
+</html>
