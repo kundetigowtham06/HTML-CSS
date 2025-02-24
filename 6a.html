@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="6a.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: auto;
+            font-family: sans-serif;
+        }
+        button{
+            border-radius: 20%;
+            background-color:white;
+            margin-left: 20px;
+
+        }
+        p{
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Embedding System</h1>
+    <p id="internal">This text is updated using internal javaScript!</p>
+    <button onclick="internal()">Change text(Internal Js)</button>
+    <p id="external">This text is updated using external JavaScript</p>
+    <button onclick="external()">Change Text (External JS)</button>
+    <script>
+        function internal(){
+            document.getElementById("internal").innerHTML="This is a internal JavaScript";
+        }
+    </script>
+</body>
+</html>
