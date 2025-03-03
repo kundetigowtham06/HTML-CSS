@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: sans-serif;
+            text-align: center;
+            font-weight: bolder;
+        }
+        .input-method{
+            margin: 20px auto;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            width: 80%;
+            max-width: 600px;
+            box-shadow:0rem;
+        }
+        button{
+           border: none;
+           background-color: beige;
+        }
+        #submit{
+            background-color: bisque;
+            color: rgb(4, 23, 31);
+        }
+    </style>
+</head>
+<body>
+    <div class="input-method">
+        <h2>Prompt()</h2>
+        <button onclick="usingPrompt()">Using Prompt</button>
+        <p id="output1"></p>
+    </div>
+    <div class="input-method">
+        <h2>inputs</h2>
+        <input type="text" id="a" placeholder="Enter a number">
+        <button onclick="usingInput()" id="Submit">Submit</button>
+        <p id="output2"></p>
+    </div>
+    <div class="input-method">
+        <h2>Forms</h2>
+        <form id="form" onsubmit="handleform(event)">
+            <input type="text" id="formInput" placeholder="Enter a number">
+            <button id="submit" type="submit">Submit</button>
+        </form>
+        <p id="output3"></p>
+    </div>
+    <script>
+        function usingPrompt(){
+            const input=prompt("Enter any number");
+            const num=parseInt(input);
+            var msg;
+            if(isNaN(num)){
+            msg="please enter valid number";
+            }
+            else if(num%2==0){
+                msg="it is a Even Number";
+            }
+            else{
+                msg="it is a odd number";
+            }
+            document.getElementById('output1').innerHTML=`${msg}`;
+
+        }
+        function usingInput(){
+            const num=document.getElementById("a").value;
+            var msg;
+            if(isNaN(num)){
+            msg="please enter valid number";
+            }
+            else if(num%2==0){
+                msg="it is a Even Number";
+            }
+            else{
+                msg="it is a odd number";
+            }
+            document.getElementById('output2').innerHTML=`${msg}`;
+
+        }
+        function handleform(event){
+            event.preventDefault();
+            const num=document.getElementById("formInput").value;
+            var msg;
+            if(isNaN(num)){
+            msg="please enter valid number";
+            }
+            else if(num%2==0){
+                msg="it is a Even Number";
+            }
+            else{
+                msg="it is a odd number";
+            }
+            document.getElementById('output3').innerHTML=`${msg}`;
+
+        }
+    </script>
+    
+</body>
+</html>
