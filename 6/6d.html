@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Eligibility check</h2>
+    <button onclick="check()">Click</button>
+    <script>
+        function check(){
+            let name=prompt("Enter your name");
+            let age=prompt("Enter your Age");
+            let Eligibility=(age>=18)?"yes":"No";
+            let color=(Eligibility=='yes')?"green":'red';
+            document.write(`
+                 <table border="1" style="border-collapse:collapse;">
+            <tr>
+                <th>NAME</th>
+                <th>AGE</th>
+                <th>ELigibility</th>
+            </tr>
+            <tr>
+                <td>${name}</td>
+                <td>${age}</td>
+                <td style= "color: ${color}">${Eligibility}</td>
+             </tr>
+             </table>
+
+
+            `)
+        }
+    </script>
+</body>
+</html>
