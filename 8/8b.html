@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        .new{
+            display: inline-block;
+        }
+        
+button {
+    background: linear-gradient(145deg, #6e7cdb, #4a5bff); 
+    border: none;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border-radius: 50px; 
+    cursor: pointer;
+    transition: all 0.3s ease; 
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1); 
+}
+#output{
+    border: 2px solid #4a5bff;
+    height: 30px;
+    width: 300px;
+    
+}
+
+    </style>
+</head>
+<body>
+    <h1><strong>Week Days Using Switch Case</strong></h1>
+    <div class="new">
+        <button onclick="week()">Enter number</button>
+    </div>
+    <div class="new">
+        <p id="output">Click the button to enter a number</p>
+
+    </div>
+    <script>
+        function week(){
+            const d=prompt("Enter a number:");
+            var msg;
+            switch (d) {
+                case "1": msg = "SUNDAY"; 
+                            break;
+                case "2": msg = "MONDAY"; 
+                            break;
+                case "3": msg = "TUESDAY";
+                             break;
+                case "4": msg = "WEDNESDAY"; 
+                            break;
+                case "5": msg = "THURSDAY"; 
+                            break;
+                case "6": msg = "FRIDAY"; 
+                            break;
+                case "7": msg = "SATURDAY"; 
+                            break;
+                default: msg = "Enter valid number (1-7)"; 
+                            break;
+            }
+            document.getElementById("output").innerHTML=`${msg}`;
+        }
+    </script>
+</body>
+</html>
