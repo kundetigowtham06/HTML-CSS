@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: sans-serif;
+            text-align: center;
+            padding-top: 200px;
+        }
+        #a{
+            border: none;
+            height: 55px;
+            width: 150x;
+            background-color: lightblue;
+            color: black;
+            border-radius: 20%;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Find the Largest number</h1>
+    <button id="a" onclick="maximum()"><strong>Enter numbers</strong></button>
+    <p id="output">Click the button to enter numbers</p>
+    <script>
+        function maximum(){
+        const a=prompt("Enter first number: ");
+        const b=prompt("Enter Second number: ");
+        const c=prompt("Enter Third number: ");
+        var msg;
+        if(a>b && a>c){
+            msg=a;
+        }
+        else if(b>c){
+            msg=b;
+        }
+        else{
+            msg=c;
+        }
+        alert(`${msg} is Large`);
+        }
+    </script>
+
+    
+</body>
+</html>
