@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+        .new {
+            text-align: center;
+            gap: 20px;
+            display: flex;
+            flex-direction: row;
+            margin-left: 35vw;
+        }
+        #button {
+            background: linear-gradient(145deg, #6e7cdb, #4a5bff); 
+            border: none;
+            font-size: 16px;
+            padding: 12px 24px;
+            border-radius: 50px; 
+            cursor: pointer;
+            transition: all 0.3s ease; 
+            box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);  
+        }
+        #output {
+            border:solid 5px rgb(119, 148, 254);
+            padding: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Armstrong number or Not</h1>
+    <div class="new">
+        <button id="button" onclick="Armstrong()">Enter Number</button>
+        <p id="output">Click the button to enter the number</p>
+    </div>
+    <script>
+        function Armstrong() {
+    var userNumberInput = prompt("Enter the number :");
+    const inputNumber = parseInt(userNumberInput);
+    var numberOfDigits = 0, temporaryNumber = inputNumber, digitCount = 0;
+    var armstrongSum = 0;
+
+    while (temporaryNumber !== 0) {
+        temporaryNumber = Math.floor(temporaryNumber / 10);
+        digitCount++;
+    }
+
+    temporaryNumber = inputNumber;
+
+    while (temporaryNumber !== 0) {
+        const remainder = temporaryNumber % 10;
+        armstrongSum += Math.pow(remainder, digitCount);
+        temporaryNumber = Math.floor(temporaryNumber / 10);
+    }
+
+    var resultMessage = "";
+    if (armstrongSum === inputNumber) {
+        resultMessage = inputNumber + " is an armstrong number.";
+    } else {
+        resultMessage = inputNumber + " is not an armstrong number.";
+    }
+
+    document.getElementById("output").innerHTML = `${resultMessage}`;
+}
+
+    </script>
+</body>
+</html>
